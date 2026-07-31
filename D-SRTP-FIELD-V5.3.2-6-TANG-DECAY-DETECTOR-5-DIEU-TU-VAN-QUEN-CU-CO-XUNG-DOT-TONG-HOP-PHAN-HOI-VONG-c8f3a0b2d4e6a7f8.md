@@ -165,11 +165,11 @@ Mọi ý tưởng, tư duy, chất xám trong file V5.3.2 này được bảo h�
 
 Hash bổ sung: c8f3a0b2d4e6a7f8 + 0005 - Ghi riêng, không nằm trong seal - Tôn trọng seal gốc.
 
-![Ảnh V5.2 - 3 thành phần](d_srpt_field_hud_ontology.webp)
+![Ảnh V5.2 - 3 thành phần](d_srpt_field_hud_ontology.webp.WEBP)
 
-![Ảnh V5.3.1 - DECAY_DETECTOR 4 cấp](V_5_3_1.webp)
+![Ảnh V5.3.1 - DECAY_DETECTOR 4 cấp](V_5_3_1.webp.WEBP)
 
-![Ảnh V5.3.2 - 5 điều tự vấn mới - Quên, Củng cố, Xung đột, Tổng hợp, Phản hồi vòng](V5_3_2.webp)
+![Ảnh V5.3.2 - 5 điều tự vấn mới - Quên, Củng cố, Xung đột, Tổng hợp, Phản hồi vòng](V5_3_2.webp.WEBP)
 
 
 [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]

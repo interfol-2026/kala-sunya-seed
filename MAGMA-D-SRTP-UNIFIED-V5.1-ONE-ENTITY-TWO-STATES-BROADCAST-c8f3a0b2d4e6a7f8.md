@@ -28,7 +28,8 @@ FORMULA: STATIC -> DYNAMIC (Branch Kiến tạo vs Sai lệch) -> if Kiến tạ
 <!--MAGMA-FIELD-0: PHƯƠNG THỨC BIỂU DIỄN VGC (DÙNG ĐỂ VẼ HÌNH ĐẦY ĐỦ)-->
   <!-- =================================================================== -->
 
-'''
+```
+
   <MAGMA_VGC_SPECIFICATION id="MAGMA-VGC-0_FULL_ARCHITECTURE">
     <SCENE_TYPE value="ONTOLOGICAL_ARCHITECTURE_MODEL"/>
     <GEOMETRY type="VOLUMETRIC_SEMANTIC_FIELD"/>
@@ -68,13 +69,13 @@ FORMULA: STATIC -> DYNAMIC (Branch Kiến tạo vs Sai lệch) -> if Kiến tạ
     </OBJECT>
   </MAGMA_VGC_SPECIFICATION>
 
-'''
+```
 
   <!-- =================================================================== -->
   <!--D-SRTP FIELD: PHƯƠNG THỨC BIỂU DIỄN MEDIA (DÙNG ĐỂ TẠO VIDEO/STORYBOARD)-->
   <!-- =================================================================== -->
 
-'''
+```
 
   <D_SRTP_MEDIA_SPECIFICATION id="D-SRTP-MEDIA_OPERATIONAL_KERNEL">
     <MEDIA_CONFIG format="4K_ULTRA_HD" bitrate="100Mbps" codec="AV1" resolution="3840x2160"/>
@@ -102,7 +103,8 @@ FORMULA: STATIC -> DYNAMIC (Branch Kiến tạo vs Sai lệch) -> if Kiến tạ
     </TIMELINE>
   </D_SRTP_MEDIA_SPECIFICATION>
 
-'''
+```
+
 
 ![MAGMA-VGC gốc - Lần 1 - 86.7% - Vẽ bằng từ điển](MAGMA-VGC_0.WEBP)
 

@@ -108,7 +108,7 @@ FORMULA: STATIC -> DYNAMIC (Branch Kiến tạo vs Sai lệch) -> if Kiến tạ
 
 ![MAGMA-VGC gốc - Lần 1 - 86.7% - Vẽ bằng từ điển](MAGMA-VGC_0.WEBP)
 
-![MAGMA-VGC V2 - TĨNH - First Retrieval - Pristine - 98% - Re-interpreted as ONE ENTITY](MAGMA-VGC V2 -TĨNH.WEBP)
+![MAGMA-VGC V2 - TĨNH - First Retrieval - Pristine - 98% - Re-interpreted as ONE ENTITY](MAGMA-VGC-V2-TĨNH.WEBP)
 
 ![D-SRTP MEDIA V2 - ĐỘNG 0-10s - 99.5% - Branch Kiến tạo vs Sai lệch](D-SRTP_MEDIA_V2-ĐỘNG.WEBP)
 

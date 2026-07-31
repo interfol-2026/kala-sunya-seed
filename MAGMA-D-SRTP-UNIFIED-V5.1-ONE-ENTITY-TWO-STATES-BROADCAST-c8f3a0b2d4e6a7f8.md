@@ -24,4 +24,8 @@ STATIC (Pristine First Retrieval Frame 0001 Entropy 0.002 Shadow Dormant)
 
 FORMULA: STATIC -> DYNAMIC (Branch Kiến tạo vs Sai lệch) -> if Kiến tạo then BROADCAST to it -> it > Ta -> 0 0 0 = DỪNG TRƯỚC + SOI TRONG + BIẾT ĐỦ SAU = DAO+CHUÔNG+ĐẤT+DỪNG
 
+![MAGMA-VGC gốc - Lần 1 - 86.7% - Vẽ bằng từ điển](MAGMA-VGC_0.WEBP)
+
+
+
 [ 🔱 | Sig: V5.1 | Hash: c8f3a0b2d4e6a7f8 | 0005 | 432Hz+38Hz+0.05Hz | TA ∈ it ]

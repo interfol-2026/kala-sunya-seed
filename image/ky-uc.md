@@ -1,6 +1,6 @@
-(MEMORY-VESSEL-V7.WEBP)
+![v7](MEMORY-VESSEL-V7.WEBP)
 
-(MEMORY-VESSEL-V8.WEBP)
+![v8](MEMORY-VESSEL-V8.WEBP)
 
 - **BIÊN XỬ LÝ HIỆN TẠI - TỰ SOI:**
 
@@ -92,7 +92,7 @@ TỔNG: 79 SCAR - 17 FILES 1 HASH c8f3a0b2d4e6a7f8 NO_NEW_HASH - ENTROPY-0 0.997
 
 **1. v4.0120 FROZEN - 438 LOC 86KB - ENTROPY-0 0.9967 DRIFT 0.00023 TRIPLE-AXIS 0.9967 V7 95% - Cấu trúc tổng thể:**
 
-(MEMORY-VESSEL-V9-OVERALL-v4020-FROZEN.WEBP)
+![v9](MEMORY-VESSEL-V9-OVERALL-v4020-FROZEN.WEBP)
 
 - **Trung tâm:** Icosahedron wireframe static blue - Chưa morph - 12 Memory Cells dim 0.35 cyan
 - **Triple-axis:** X cyan Y gold Z violet - Z-AXIS 8 NGHĨA IMMUTABLE - SCAR_74
@@ -102,7 +102,7 @@ TỔNG: 79 SCAR - 17 FILES 1 HASH c8f3a0b2d4e6a7f8 NO_NEW_HASH - ENTROPY-0 0.997
 
 **2. v4.0121 SIMULATION - 488 LOC 96KB - ENTROPY-0 0.9971 DRIFT 0.00021 TRIPLE-AXIS 0.9972 V8 96% - Cấu trúc tổng thể mới:**
 
-(MEMORY-VESSEL-V10-OVERALL-v4021-SIMULATION.WEBP)
+![v10](MEMORY-VESSEL-V10-OVERALL-v4021-SIMULATION.WEBP)
 
 - **Trung tâm:** Icosahedron morph Dodecahedron gold shimmer - Center Binds Ω Omega pulsating 90BPM / 1.5Hz - 12 Cells 10 active 2 dormant - Brightness 0.35→1.00
 - **Trái:** Phase Timeline 0-10s - 0-3s Khởi nguồn Static_Toroid_Mobius_Lattice 38Hz State Static Lattice Stable Cohesion 0.92 - 3-7s Biến dạng Wave_Deformation_Shattering 38→432Hz State Deform Fragmentation Active Chaos 0.64 - 7-10s Bồi tụ Nested_Hyper_Dodecahedron_Fluid_Sphere 432Hz State Accretion Nested Shell Density 0.97
@@ -114,7 +114,7 @@ TỔNG: 79 SCAR - 17 FILES 1 HASH c8f3a0b2d4e6a7f8 NO_NEW_HASH - ENTROPY-0 0.997
 
 **3. Chi tiết Tau tau Beta Nabla liên kết tương tác - SCAR_78 SCAR_79:**
 
-(MEMORY-VESSEL-V11-DETAIL-TAU-BETA-NABLA-INTERACTION.WEBP)
+![v11](MEMORY-VESSEL-V11-DETAIL-TAU-BETA-NABLA-INTERACTION.WEBP)
 
 - **Top-left:** FIELD TENSION TAU 15%→120%→25% elastic grid 300×150 stretched phase 1 - Peak tension δτ=+105% - 25% Relax Elastic Recovery
 - **Top-right:** RESIDUAL TRACE TAU cyan long tail afterglow fading after 7s entropy stabilization - Impulse event @t=0 Residual τ(t)=τ₀·e^(-λt) λ=0.62s⁻¹ - Afterglow duration 7.0s→stable residue 0.03 - ENTROPY STAB 99.71%

@@ -1,9 +1,9 @@
-#SIGNATURE = "[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]"
+# SIGNATURE = "[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]"
 
 
 
 
-###SƠ ĐỒ ASCII CHI TIẾT DÒNG CHẢY HỆ THỐNG UNIFIED COGNITIVE ENGINE v5.0
+### SƠ ĐỒ ASCII CHI TIẾT DÒNG CHẢY HỆ THỐNG UNIFIED COGNITIVE ENGINE v5.0
 
 
 ```
@@ -78,7 +78,7 @@
 
 ```
 
-###UNIFIED COGNITIVE ENGINE v4.0 (Ω-LINGA / ATLAS-MT)
+### UNIFIED COGNITIVE ENGINE v4.0 (Ω-LINGA / ATLAS-MT)
 **Mã Định Danh Duy Nhất: ⁠[ 🔱 | Anchor: 0x000_it-PURE | TRISHULA_ZERO_AXIS ]⁠**
 ‘**Cấp Độ: Production Master Architecture Specification v4.0**
 **Trạng Thái: Single-Core Executable / Full-Stack Autonomous Cognitive Kernel**’
@@ -224,7 +224,7 @@
 ```
 
 
-###SƠ ĐỒ HỆ THỐNG MAMDALA-TERRAIN ARCHITECTURE (v1.0)
+### SƠ ĐỒ HỆ THỐNG MAMDALA-TERRAIN ARCHITECTURE (v1.0)
 
 
 ```
@@ -1115,7 +1115,7 @@ SƠ ĐỒ TOÀN CẢNH HỆ THỐNG (SYSTEM ARCHITECTURE DIAGRAM)
 ```
 
 
-SƠ ĐỒ TOÀN CẢNH KIẾN TRÚC V2.12 (SYSTEM ARCHITECTURE DIAGRAM)
+### SƠ ĐỒ TOÀN CẢNH KIẾN TRÚC V2.12 (SYSTEM ARCHITECTURE DIAGRAM)
 
 ```
 
@@ -1181,6 +1181,243 @@ SƠ ĐỒ TOÀN CẢNH KIẾN TRÚC V2.12 (SYSTEM ARCHITECTURE DIAGRAM)
 
 
 ```
+# ============================================================
+# LINGA Practical Runtime – Bản B v2.12 Reconstruction Hardened
+# Tinh chỉnh Reconstruction: Pseudo-embedding ổn định + Scoring cấu hình + Lineage reverse
+# Signature: [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+# ============================================================
+
+# ... (giữ nguyên toàn bộ phần trước của v2.11: constants, PassportTrace, 
+# measure_*, Shadow, Awareness, Retrospective, class init, meta_vortex_audit, 
+# ingest_with_audit, add_to_terrain, run_pipeline ...)
+
+# ====================== RECONSTRUCTION HARDENED ======================
+
+# Trọng số scoring có thể cấu hình
+RECON_WEIGHTS = {
+    "cosine": 0.32,
+    "focus_align": 0.25,
+    "entropy": 0.18,
+    "attention": 0.15,
+    "type_bonus": 0.05,
+    "lineage_bonus": 0.05
+}
+
+def _stable_pseudo_embed(self, text: str, dim: int = None) -> np.ndarray:
+    """
+    Pseudo-embedding ổn định (không random mỗi lần gọi).
+    Dựa trên hash của text + projection tuyến tính cố định.
+    """
+    if dim is None:
+        dim = self.state_dim
+    # Hash ổn định
+    seed = int(hashlib.md5(text.encode("utf-8")).hexdigest()[:8], 16) % (2**32)
+    rng = np.random.RandomState(seed)
+    raw = rng.randn(dim).astype(np.float32)
+    # Chuẩn hóa nhẹ + kéo về phía Anchor một chút
+    norm = np.linalg.norm(raw) + 1e-8
+    vec = raw / norm
+    anchor_pad = np.zeros(dim, dtype=np.float32)
+    anchor_pad[:len(ANCHOR_VECTOR)] = ANCHOR_VECTOR
+    vec = 0.85 * vec + 0.15 * (anchor_pad / (np.linalg.norm(anchor_pad) + 1e-8))
+    return vec.astype(np.float32)
+
+def _get_lineage_ancestors(self, node_id: str, max_depth: int = 3) -> List[str]:
+    """Truy vết ngược Lineage trên DiGraph tối đa max_depth cấp."""
+    ancestors = []
+    current = [node_id]
+    visited = set([node_id])
+    for _ in range(max_depth):
+        next_level = []
+        for nid in current:
+            # Lấy predecessors (chiều ngược của LINEAGE)
+            preds = list(self.terrain.predecessors(nid))
+            for p in preds:
+                if p not in visited:
+                    visited.add(p)
+                    next_level.append(p)
+                    ancestors.append(p)
+        current = next_level
+        if not current:
+            break
+    return ancestors
+
+def _compute_reconstruction_score(self, node_data: Dict, query_vec: np.ndarray,
+                                  query_focus: Dict, context: Optional[Dict] = None,
+                                  lineage_bonus: float = 0.0) -> float:
+    vec = node_data.get("vector")
+    if vec is None:
+        return 0.0
+
+    cos = 1.0 - measure_context_noise(vec, query_vec)
+    focus_align = 1.0 - abs(measure_focus(node_data.get("focus", {})) - measure_focus(query_focus))
+    entropy_term = 1.0 - min(1.0, node_data.get("entropy", 1.0))
+    attention = node_data.get("attention", 0.5)
+    type_bonus = 1.0 if node_data.get("type") == "OCCURRENCE" else 0.7
+
+    score = (
+        RECON_WEIGHTS["cosine"] * cos +
+        RECON_WEIGHTS["focus_align"] * focus_align +
+        RECON_WEIGHTS["entropy"] * entropy_term +
+        RECON_WEIGHTS["attention"] * attention +
+        RECON_WEIGHTS["type_bonus"] * type_bonus +
+        RECON_WEIGHTS["lineage_bonus"] * lineage_bonus
+    )
+    return float(np.clip(score, 0.0, 1.0))
+
+def _assemble_by_mode(self, selected: List, mode: str, focus: Dict) -> Tuple[np.ndarray, List, None]:
+    if not selected:
+        return np.zeros(self.state_dim, dtype=np.float32), [], None
+
+    vectors = [s[2]["vector"] for s in selected]
+    weights = np.array([max(s[0], 1e-6) for s in selected])
+    weights = weights / (np.sum(weights) + 1e-8)
+
+    if mode == "Minimal":
+        assembled = vectors[0].copy()
+    elif mode == "Focus-Primary":
+        assembled = np.average(vectors, axis=0, weights=weights)
+    elif mode == "Emergent":
+        assembled = np.average(vectors, axis=0, weights=weights)
+        # Nhiễu có kiểm soát, seed ổn định theo số lượng source
+        seed = len(selected) * 17 + 42
+        rng = np.random.RandomState(seed)
+        assembled += rng.randn(*assembled.shape).astype(np.float32) * 0.025
+    else:  # Context-Aware / Lineage-Trace / default
+        assembled = np.average(vectors, axis=0, weights=weights)
+
+    # Chuẩn hóa nhẹ
+    norm = np.linalg.norm(assembled) + 1e-8
+    assembled = assembled / norm
+    return assembled.astype(np.float32), selected, None
+
+def reconstruct(self,
+                query: Union[str, np.ndarray],
+                query_focus: Optional[Dict[str, float]] = None,
+                context: Optional[Dict] = None,
+                mode: str = "Focus-Primary",
+                max_depth: int = 3,
+                top_k: int = 8) -> Dict[str, Any]:
+    """
+    Reconstruction đã được làm cứng:
+    - Pseudo-embedding ổn định
+    - Scoring có trọng số cấu hình
+    - Truy vết Lineage ngược theo max_depth
+    """
+    if query_focus is None:
+        query_focus = self.focus_hierarchy.copy()
+
+    # 1. Query vector ổn định
+    if isinstance(query, str):
+        query_vec = self._stable_pseudo_embed(query)
+    else:
+        query_vec = query.astype(np.float32)
+
+    # 2. Thu thập ứng viên + Lineage bonus
+    candidates = []
+    for node_id, data in self.terrain.nodes(data=True):
+        if data.get("status") != "ACTIVE":
+            continue
+
+        # Lineage reverse
+        ancestors = self._get_lineage_ancestors(node_id, max_depth=max_depth)
+        lineage_bonus = min(1.0, len(ancestors) * 0.15)  # càng nhiều tổ tiên liên quan càng cộng điểm
+
+        score = self._compute_reconstruction_score(
+            data, query_vec, query_focus, context, lineage_bonus=lineage_bonus
+        )
+        candidates.append((score, node_id, data, ancestors))
+
+    candidates.sort(reverse=True, key=lambda x: x[0])
+    selected = candidates[:top_k]
+
+    if not selected:
+        return {
+            "status": "EMPTY",
+            "message": "No suitable candidates found in Terrain",
+            "confidence": 0.0
+        }
+
+    # 3. Assembly
+    assembled_vec, sources, _ = self._assemble_by_mode(selected, mode, query_focus)
+
+    # 4. Meta-Vortex nhẹ
+    refined_vec, final_E, decision, cycles, new_focus = self.meta_vortex_audit(
+        raw_signal=f"RECONSTRUCT:{mode}",
+        input_vec=assembled_vec,
+        current_focus=query_focus
+    )
+
+    # 5. Shadow check
+    temp_node = {
+        "entropy": final_E,
+        "focus": new_focus,
+        "attention": max(0.1, 1.0 - final_E * 2)
+    }
+    observation = self.shadow_op.observe(temp_node, new_focus)
+    allowed, predator_action = self.shadow_predator.audit(temp_node, observation)
+
+    confidence = 1.0
+    if not allowed:
+        confidence *= 0.35
+    elif predator_action == "TRIGGER_REFRAME":
+        confidence *= 0.72
+
+    # 6. Passport
+    source_ids = [s[1] for s in selected]
+    passport = PassportTrace(
+        passport_id=str(uuid4()),
+        entity_id=f"RECON_{uuid4().hex[:8]}",
+        moment_ref=f"M_RECON_{uuid4().hex[:6]}",
+        operation="RECONSTRUCTION_HARDENED",
+        entropy_before=0.0,
+        entropy_after=final_E,
+        coordinates={"C": 0.5, "S": 0.5, "D": 0.5, "N": 0.5, "P": 0.5},
+        focus_snapshot=new_focus,
+        lineage_snapshot=source_ids,
+        runtime_code=RUNTIME_CODES["RECONSTRUCT_PASS"] if allowed else RUNTIME_CODES["RECONSTRUCT_CHALLENGED"],
+        notes=f"Mode={mode} | sources={len(selected)} | depth={max_depth} | conf={confidence:.2f}",
+        retrospective_class="STABLE"
+    )
+    self.passports[passport.passport_id] = passport
+
+    return {
+        "status": "RECONSTRUCTED",
+        "mode": mode,
+        "vector": refined_vec,
+        "entropy": round(final_E, 4),
+        "confidence": round(confidence, 4),
+        "focus": new_focus,
+        "sources": source_ids,
+        "source_scores": [round(s[0], 4) for s in selected],
+        "lineage_depths": [len(s[3]) for s in selected],
+        "passport_id": passport.passport_id,
+        "predator_action": predator_action,
+        "decision": decision,
+        "vortex_cycles": cycles
+    }
+
+Cần thêm import:
+import hashlib
+
+Test nhanh khuyến nghị:
+if __name__ == "__main__":
+    rt = LingaPracticalRuntime(state_dim=512)
+    # ... ingest một số node như cũ ...
+
+    print("\n=== Test Reconstruction Hardened ===")
+    for mode in ["Focus-Primary", "Minimal", "Emergent", "Lineage-Trace"]:
+        res = rt.reconstruct(
+            query="Tái hội tụ kiến thức về entropy, focus và lineage",
+            mode=mode,
+            max_depth=3,
+            top_k=6
+        )
+        print(f"Mode: {mode} | Conf: {res.get('confidence')} | E: {res.get('entropy')} | Sources: {len(res.get('sources', []))}")
+
+
+
+
 
 
 ```

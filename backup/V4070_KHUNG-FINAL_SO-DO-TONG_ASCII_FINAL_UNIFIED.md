@@ -210,3 +210,82 @@ END OF ASCII — KALA-SUNYA v4.0170 FINAL UNIFIED COGNITIVE ARCHITECTURE
 ```
 
 
+```
+
+
+==================================================================================================
+                 KALA-SUNYA v4.0150: WORLD MODEL + CLOSED-LOOP EMBODIED ARCHITECTURE
+==================================================================================================
+
+ [ 1. SENSOR STREAM (Asynchronous Multi-Source Inputs) ]
+ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+ │ Camera 30Hz  │ │ Depth 10-30Hz│ │ Force 100Hz  │ │ IMU 200Hz    │ │ Audio 48kHz  │ ... [JOINT/MOTOR]
+ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘
+        │                │                │                │                │
+ ───────┴────────────────┴────────────────┴────────────────┴────────────────┴───────────────────
+ [ 2. CLOSED-LOOP EMBODIED ENGINE (ClosedLoopEmbodied.step()) ]
+        │
+        ├────────► 2.1 WorldModel.observe(sensors) 
+        │          └──► Multi-Source Confluence ──► Creates Moment (Mi) [TIME ∈ MOMENT]
+        │
+        ├────────► 2.2 WorldModel.update_state(moment)
+        │          └──► Imprint into 3-Layer Storage & Update Dynamic State
+        │
+        ├────────► 2.3 CoreVortex.compute_entropy(occ_a, occ_b) 
+        │          └──► Computes Total Entropy E (e.g., E = 0.11)
+        │
+        ├────────► 2.4 ActionSpace.get_action(state, focus, E) + HybridTriLayerRouter (FAR 0.2)
+        │          ├──► E <= 0.05  : PASS           ──► Execute Action (e.g., reach_and_grasp)
+        │          ├──► E <= 0.20  : SOFT REFRAME   ──► Re-observe / Soft Reframe
+        │          └──► E > 0.20   : HARD COLLAPSE  ──► Force Collapse / Re-branch
+        │
+        ├────────► 2.5 WorldModel.predict(action, state_id)
+        │          └──► Predict Next State with Preservation Profile (STATE: T, COND/FOCUS/LINEAGE: P)
+        │
+        ├────────► 2.6 Execute Action & Environment Changes
+        │          └──► Generate env_changes & Calculate Success Rate
+        │
+        └────────► 2.7 Pipeline Outputs & Memory Imprint (Step Result)
+                   │
+ ──────────────────┼──────────────────────────────────────────────────────────────────────────────
+ [ 3. PROVENANCE MEMORY & WORLD MODEL DETAILED ]
+                   │
+                   ├───► ProvenanceMemoryEngine.store()
+                   │     └──► Generates Record (MEM-time-lineage)
+                   │     └──► Selective Merge (⊕_S): Content (C) | Condition/Focus/Lineage (P)
+                   │
+                   ├───► WorldModelDetailed.learn_dynamics(history)
+                   │     └──► Maps Key (State, Action, Condition) ──► [{next, focus, lineage, provenance}]
+                   │
+                   └───► WorldModelDetailed.update_from_closed_loop()
+                         └──► Retrospective Classification: EVIDENCE_REFINED | STABLE | POTENTIAL_MUTATION
+                         │
+ ────────────────────────┼────────────────────────────────────────────────────────────────────────
+ [ 4. HYBRID TRI-LAYER STORAGE (Hạ Tầng Lưu Trữ 3 Tầng) ]
+                         │
+        ┌────────────────┼──────────────────────────────┬──────────────────────────────┐
+        ▼                ▼                              ▼                              ▼
+ ┌──────────────┐ ┌──────────────┐             ┌──────────────────┐           ┌──────────────────┐
+ │ TẦNG 1: RUST │ │ TẦNG 2:      │             │ TẦNG 3: POSTGRES │           │ CORPORATE        │
+ │ Engine       │ │ QDRANT       │             │ Append-Only DB   │           │ TERRAIN          │
+ │ (sub-ms      │ │ Vector DB    │             │ (Audit Log &     │           │ Collective       │
+ │ Imprint)     │ │ (~5-10ms)    │             │ Passport Graph)  │           │ Shared Knowledge │
+ └──────────────┘ └──────────────┘             └──────────────────┘           └──────────────────┘
+        │                │                              │                              │
+ ───────┴────────────────┴──────────────────────────────┴──────────────────────────────┴───────────────────
+ [ 5. REAL-WORLD FEEDBACK LOOP ]
+        ▲                                                                              │
+        └─────────── New Observation (Sensors_t+1) ◄── Environment Changes ────────────┘
+==================================================================================================
+
+
+```
+
+
+```
+
+
+```
+
+
+

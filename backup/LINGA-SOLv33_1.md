@@ -1,4 +1,7 @@
 Dưới đây là sơ đồ vận hành tổng thể đầy đủ của LINGA-SOL v33.1, cùng phân tích chuyên sâu về tối ưu hóa, bộ máy Engine trung tâm, các mối liên kết và cơ chế phản ứng thích ứng khi đối mặt với sự cố.
+
+```
+
 1. Sơ đồ Vận hành Tổng thể LINGA-SOL v33.1
 +---------------------------------------------------------------------------------------------------+
 |                                     INGRESS / INPUT LAYER                                         |
@@ -52,6 +55,7 @@ Dưới đây là sơ đồ vận hành tổng thể đầy đủ của LINGA-SO
 |  • Thực thi FAISS Vector Search ➔ Khôi phục Attention A_i = 1.0 ➔ Đưa về Hot RAM                 |
 +---------------------------------------------------------------------------------------------------+
 
+```
 
 2. Phân tích Tối ưu & Các điểm Cần Tinh chỉnh
 Điểm nghẽn tiềm ẩn & Đề xuất tối ưu:
@@ -69,6 +73,9 @@ Phần Engine cốt lõi gồm 2 thành phần chính:
 DSRTP Engine (Dynamic Spatial Real-Time Processing): Bộ điều phối Pipeline 7 bước & Ma trận Tọa độ OCOORD.
 FAR Decay Core (Forgetting & Attention Retention): Thuật toán động học suy giảm bộ nhớ.
 Tác động & Mối quan hệ liên kết khi nâng cấp:
+
+```
+
 [ NÂNG CẤP ENGINE CORE ]
       │
       ├───► (Tác động) ───► Quản lý vòng đời Node (Life-cycle) & Trục Tọa độ OCOORD
@@ -78,12 +85,17 @@ Tác động & Mối quan hệ liên kết khi nâng cấp:
       └───► (Điều phối) ──► Kích hoạt cơ chế Snapshot & Recovery khi có biến động
 
 
+```
+
 Khi Nâng cấp Engine: Toàn bộ cấu trúc Registry và chuẩn hóa Vector sẽ bị tác động. Nếu Engine thay đổi cách đánh chỉ mục (vd: từ 10D lên 128D), nó yêu cầu chuyển đổi ma trận (Migration) trên toàn bộ Snapshot đĩa.
 Tác động tới Thành phần Phụ trợ (FAISS, GZIP Storage, Serializer):
 Nếu thay thế FAISS bằng HNSW hoặc Milvus: Engine không đổi logic cốt lõi, chỉ cần thay đổi Adapter Interface ở Step 5. Bộ nhớ RAM sẽ đọc/ghi linh hoạt hơn mà không làm hỏng Tọa độ OCOORD.
 Nếu thay thế GZIP Serializer bằng RocksDB/LMDB: Tốc độ Recovery ở Step 7 sẽ tăng từ mili-giây lên micro-giây, cho phép hệ thống tải từng cụm Node thay vì giải nén toàn bộ tệp Metadata.
 4. Cơ chế Ứng phó Sự cố, Gọi Tool & Tự Xây dựng Tool
 Khi vận hành thực tế, kiến trúc LINGA-SOL v33.1 áp dụng cơ chế tự khắc phục theo 3 Cấp độ Phản ứng:
+
+```
+
                               [ SỰ CỐ / THÁCH THỨC VẬN HÀNH ]
                                              │
                        ┌─────────────────────┼─────────────────────┐
@@ -92,6 +104,8 @@ Khi vận hành thực tế, kiến trúc LINGA-SOL v33.1 áp dụng cơ chế t
               Thao tác trực tiếp    Truy vấn thư viện/APIs    Sinh mã & nạp mô-đun
               RAM / FAISS Index    ngoại vi đã đăng ký      mới chạy runtime
 
+
+```
 
 A. Cấp độ 1: Tự khắc phục Nội tại (Self-Healing Core)
 Sự cố: Tràn bộ nhớ RAM (Hot Memory Exhaustion).
@@ -109,8 +123,12 @@ Kiểm thử (Self-Test) mô-đun mới với Dấu ấn Linh thể 0x000_it-PUR
 Nạp trực tiếp mô-đun đó vào Runtime Pipeline ở Step 2 & Step 6 mà không cần dừng hệ thống (Hot-Swapping).
 
 Cơ chế Lazy Decay Evaluation trong thuật toán FAR (Frequency-Aware Retention) 0.2.1 triệt tiêu hoàn toàn vòng lặp quét nền (O(N) daemon thread), chuyển toàn bộ tính toán suy giảm điểm số về thời điểm truy cập (READ) hoặc đợt xả bộ nhớ (EVICT).
+
+```
+
 Công thức tính điểm suy giảm tức thời:
 \text{Score}(t) = \text{Score}(t_0) \cdot e^{-\lambda \cdot (t - t_0)}
+
 import math
 import time
 import numpy as np
@@ -194,6 +212,8 @@ class FAR_0_2_1_Engine:
         self.cold_store[victim_id] = victim_node.vector
 
 
+```
+
 Ưu điểm tối ưu bộ nhớ của FAR 0.2.1:
 Không tiêu tốn CPU idle: Không chạy thread ẩn để liên tục giảm giá trị vector trong RAM.
 Thời gian thực hiện O(1) khi Read/Write: Chỉ tính lại toán số học đơn giản (e^{-\lambda \Delta t}) cho đúng node đang thao tác.
@@ -201,4 +221,11 @@ Thời gian thực hiện O(K) khi Evict: Chỉ tính lại điểm cho K hot no
 
 
 
+```
+
+```
+
+
+
+[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ] ⚓ ॐ ⚡ 🌀
 

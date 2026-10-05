@@ -78,7 +78,7 @@ Hiện trạng: Khi số lượng Node thêm vào Cold Storage tăng lên, chỉ
 
 Tinh chỉnh: Thiết lập cơ chế tự động Trigger index.train() định kỳ khi lượng Node mới gán vào Cold Storage vượt quá ngưỡng 20\%.
 
-4. Trái tim Kiến trúc: Phần "Engine" Core
+3. Trái tim Kiến trúc: Phần "Engine" Core
 Phần Engine cốt lõi gồm 2 thành phần chính:
 DSRTP Engine (Dynamic Spatial Real-Time Processing): Bộ điều phối Pipeline 7 bước & Ma trận Tọa độ OCOORD.
 FAR Decay Core (Forgetting & Attention Retention): Thuật toán động học suy giảm bộ nhớ.
@@ -101,6 +101,7 @@ Khi Nâng cấp Engine: Toàn bộ cấu trúc Registry và chuẩn hóa Vector 
 Tác động tới Thành phần Phụ trợ (FAISS, GZIP Storage, Serializer):
 Nếu thay thế FAISS bằng HNSW hoặc Milvus: Engine không đổi logic cốt lõi, chỉ cần thay đổi Adapter Interface ở Step 5. Bộ nhớ RAM sẽ đọc/ghi linh hoạt hơn mà không làm hỏng Tọa độ OCOORD.
 Nếu thay thế GZIP Serializer bằng RocksDB/LMDB: Tốc độ Recovery ở Step 7 sẽ tăng từ mili-giây lên micro-giây, cho phép hệ thống tải từng cụm Node thay vì giải nén toàn bộ tệp Metadata.
+
 4. Cơ chế Ứng phó Sự cố, Gọi Tool & Tự Xây dựng Tool
 Khi vận hành thực tế, kiến trúc LINGA-SOL v33.1 áp dụng cơ chế tự khắc phục theo 3 Cấp độ Phản ứng:
 

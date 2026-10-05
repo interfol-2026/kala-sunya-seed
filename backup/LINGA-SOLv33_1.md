@@ -59,16 +59,26 @@ Dưới đây là sơ đồ vận hành tổng thể đầy đủ của LINGA-SO
 
 2. Phân tích Tối ưu & Các điểm Cần Tinh chỉnh
 Điểm nghẽn tiềm ẩn & Đề xuất tối ưu:
-Tối ưu hóa FAR Decay (Step 4):
+
+- Tối ưu hóa FAR Decay (Step 4):
+  
 Hiện trạng: Vòng lặp FAR đang duyệt qua toàn bộ RAM bằng phương pháp quét tĩnh O(N). Khi số lượng Node ở Hot Memory tăng lên hàng trăm nghìn, việc tính hàm mũ e^{-\theta \Delta t} cho từng Node sẽ tốn CPU.
+
 Tinh chỉnh: Chuyển sang mô hình Lazy Decay Evaluation (Chỉ tính toán lại điểm Attention khi Node đó được truy vấn hoặc chạm ngưỡng timer kiểm tra theo lô dạng priority queue/min-heap).
-Tối ưu hóa GZIP Compression Level (Step 6):
+
+- Tối ưu hóa GZIP Compression Level (Step 6):
+
 Hiện trạng: Nén GZIP Level 9 đạt tỉ lệ nén tối đa nhưng gây lag I/O CPU khi Snapshot dữ liệu lớn.
+
 Tinh chỉnh: Chuyển sang Zstandard (zstd) hoặc hạ xuống GZIP Level 6 để tăng tốc độ nén/giải nén lên gấp 3-5 lần mà giữ dung lượng nén gần tương đương.
-Quản lý IndexIVFFlat của FAISS (Step 5):
+
+- Quản lý IndexIVFFlat của FAISS (Step 5):
+
 Hiện trạng: Khi số lượng Node thêm vào Cold Storage tăng lên, chỉ mục IVF cần gọi hàm re-train hoặc re-index để đảm bảo khoảng cách vector không bị lệch (centroid drift).
+
 Tinh chỉnh: Thiết lập cơ chế tự động Trigger index.train() định kỳ khi lượng Node mới gán vào Cold Storage vượt quá ngưỡng 20\%.
-3. Trái tim Kiến trúc: Phần "Engine" Core
+
+4. Trái tim Kiến trúc: Phần "Engine" Core
 Phần Engine cốt lõi gồm 2 thành phần chính:
 DSRTP Engine (Dynamic Spatial Real-Time Processing): Bộ điều phối Pipeline 7 bước & Ma trận Tọa độ OCOORD.
 FAR Decay Core (Forgetting & Attention Retention): Thuật toán động học suy giảm bộ nhớ.
@@ -110,16 +120,19 @@ Khi vận hành thực tế, kiến trúc LINGA-SOL v33.1 áp dụng cơ chế t
 A. Cấp độ 1: Tự khắc phục Nội tại (Self-Healing Core)
 Sự cố: Tràn bộ nhớ RAM (Hot Memory Exhaustion).
 Ứng phó: Engine tự động nâng tham số θ (Theta) trong phương trình FAR Decay để đẩy nhanh quá trình chuyển dịch các Node có chú ý thấp xuống Cold Storage (FAISS) mà không cần can thiệp bên ngoài.
+
 B. Cấp độ 2: Nhận diện & Gọi Tool có sẵn (Tool Calling)
 Sự cố: Tìm kiếm vector sai lệch hoặc thiếu chỉ mục centroid do dữ liệu tăng đột biến.
 Ứng phó: Engine phát hiện chỉ số is_trained == False hoặc khoảng cách tìm kiếm vector lớn hơn ngưỡng cho phép \epsilon. Nó lập tức phát lệnh Call Tool:
 Gọi faiss.index.train() để huấn luyện lại không gian IVF.
 Gọi gzip.decompress() hoặc save_snapshot() để khóa an toàn dữ liệu.
+
 C. Cấp độ 3: Tự Xây dựng Tool Động (Dynamic Tool Building / Runtime Extension)
 Sự cố: Xuất hiện chuẩn Vector mới (vd: 128D hoặc Tensor đa chiều) hoặc định dạng lưu trữ snapshot bị đe dọa bởi lỗi rò rỉ dữ liệu / hỏng tệp.
 Ứng phó: Engine khởi chạy Dynamic Code Generation Subsystem:
-Tự biên dịch một mô-đun Python/C++ phụ trợ trong môi trường Sandbox (vd: Bộ chuyển đổi Vector Adapters hoặc Bộ giải nén tùy chỉnh).
-Kiểm thử (Self-Test) mô-đun mới với Dấu ấn Linh thể 0x000_it-PURE.
+
++ Tự biên dịch một mô-đun Python/C++ phụ trợ trong môi trường Sandbox (vd: Bộ chuyển đổi Vector Adapters hoặc Bộ giải nén tùy chỉnh).
++ Kiểm thử (Self-Test) mô-đun mới với Dấu ấn Linh thể 0x000_it-PURE.
 Nạp trực tiếp mô-đun đó vào Runtime Pipeline ở Step 2 & Step 6 mà không cần dừng hệ thống (Hot-Swapping).
 
 Cơ chế Lazy Decay Evaluation trong thuật toán FAR (Frequency-Aware Retention) 0.2.1 triệt tiêu hoàn toàn vòng lặp quét nền (O(N) daemon thread), chuyển toàn bộ tính toán suy giảm điểm số về thời điểm truy cập (READ) hoặc đợt xả bộ nhớ (EVICT).
@@ -128,6 +141,10 @@ Cơ chế Lazy Decay Evaluation trong thuật toán FAR (Frequency-Aware Retenti
 
 Công thức tính điểm suy giảm tức thời:
 \text{Score}(t) = \text{Score}(t_0) \cdot e^{-\lambda \cdot (t - t_0)}
+
+```
+
+```
 
 import math
 import time

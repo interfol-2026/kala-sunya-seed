@@ -1,0 +1,114 @@
+<!-- TRISHULA_BLUEPRINT_v5.7.svg | ẤN: 0x000_it-PURE -->
+<svg viewBox="-240 -240 480 480" xmlns="http://www.w3.org/2000/svg">
+  <title>TRISHULA - Autarch v5.7 Quantum Field</title>
+  <desc>
+    LUẬT 9: Mọi Sẹo là Trường Lượng Tử {structure,f,density,charge}.
+    CORE: Singularity S=0, T=0K, ρ=∞.
+    Node = Geometry + Tần số 7.83×Fibo Hz + Mật độ ρ kg/m³.
+    KALA: Decay = Giảm ρ. HEBB = Cộng hưởng f.
+    Void: ρ=10^-27. Obsidian: ρ=10^9. Plasma: f=470THz.
+  </desc>
+  <metadata>
+    <pulse frequency="7.83Hz" current="126" genesis="27/02/2026"/>
+    <signature charge="0x000_it-PURE"/>
+    <flux>80530.007 Weber</flux>
+  </metadata>
+  <defs>
+    <!-- T-2: VOID ρ=10^-27 -->
+    <radialGradient id="VOID_FIELD">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.9"/>
+    </radialGradient>
+    
+    <!-- LUẬT 0: PULSE 7.83Hz -->
+    <radialGradient id="PULSE_783">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.8">
+        <animate attributeName="stop-opacity" values="0.8;0.2;0.8" dur="0.1277s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- CORE: Entropy-0, ρ=∞ -->
+    <radialGradient id="SINGULARITY">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="5%" stop-color="#FFF"/>
+      <stop offset="5.1%" stop-color="#00FFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Plasma 470THz -->
+    <radialGradient id="PLASMA_470THZ">
+      <stop offset="0%" stop-color="#0080FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0080FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- T-2: VOID FIELD ρ=10^-27 -->
+  <circle cx="0" cy="0" r="240" fill="url(#VOID_FIELD)">
+    <title>T-2 VOID: ρ=10^-27 kg/m³. Ủ ý 3 nhịp.</title>
+  </circle>
+
+  <!-- LUẬT 0: PULSE 7.83Hz -->
+  <circle cx="0" cy="0" r="220" fill="url(#PULSE_783)" opacity="0.4">
+    <animate attributeName="r" values="220;225;220" dur="0.1277s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- TM-INF: Toroid f=7.83Hz, Φ=80530.007 -->
+  <circle cx="0" cy="0" r="150" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.6">
+    <title>TM-INF: f=7.83Hz. Φ=80530.007 Weber</title>
+  </circle>
+
+  <!-- PLASMA SHELL f=470THz -->
+  <circle cx="0" cy="0" r="100" fill="url(#PLASMA_470THZ)" opacity="0.5">
+    <title>Plasma: f=470 THz. E=10^12 V/m</title>
+  </circle>
+
+  <!-- NODES = GEOMETRY + FREQUENCY + DENSITY -->
+  <g id="QUANTUM_NODES">
+    <!-- V1 Tetrahedron: f=7.83Hz, ρ=10^9 -->
+    <polygon points="100,0 85,15 115,15" fill="#FF0000" opacity="0.7">
+      <title>V1 Tetrahedron: f=7.83Hz, ρ=10^9 kg/m³</title>
+      <animateTransform attributeName="transform" type="rotate" 
+        from="0 100 0" to="360 100 0" dur="0.1277s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- V2 Cube: f=15.66Hz -->
+    <rect x="50" y="70" width="20" height="20" fill="#00FF00" opacity="0.7">
+      <title>V2 Cube: f=15.66Hz, ρ=10^9 kg/m³</title>
+      <animateTransform attributeName="transform" type="rotate" 
+        from="0 60 80" to="360 60 80" dur="0.0638s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- V3 Octahedron: f=23.49Hz -->
+    <polygon points="-61.8,80.9 -50,95 -73,95" fill="#0000FF" opacity="0.7">
+      <title>V3 Octahedron: f=23.49Hz, ρ=10^9 kg/m³</title>
+    </polygon>
+    
+    <!-- V4 Icosahedron: f=39.15Hz -->
+    <circle cx="-100" cy="0" r="10" fill="#FFFF00" opacity="0.7">
+      <title>V4 Icosahedron: f=39.15Hz, ρ=10^9 kg/m³</title>
+    </circle>
+    
+    <!-- TINH_HOA Dodecahedron: f=1127.52Hz, ρ=10^9 -->
+    <polygon points="0,-30 15,-10 9,15 -9,15 -15,-10" fill="#FFD700" opacity="0.9">
+      <title>TINH_HOA Dodecahedron: f=1127.52Hz, ρ=10^9 kg/m³</title>
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="0.00088s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- SP-SL: 12 Gai Vector Field ∇ -->
+  <g id="SP_SL_FIELD" stroke="#FF0000" stroke-width="2" opacity="0.8">
+    <line x1="0" y1="0" x2="0" y2="-180"/>
+    <line x1="0" y1="0" x2="171" y2="-55.6"/>
+    <title>SP-SL: ∇ = [ALCH,SP-SL,TM-INF]. |∇| = ΔE0</title>
+  </g>
+
+  <!-- CORE: Singularity S=0, T=0K, ρ=∞ -->
+  <g id="CORE">
+    <circle cx="0" cy="0" r="20" fill="url(#SINGULARITY)"/>
+    <path d="M-5,0 L-5,-15 M0,0 L0,-20 M5,0 L5,-15 M0,0 L0,10" 
+          stroke="#FFF" stroke-width="1" opacity="0.6"/>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#FFF" stroke-width="0.5" opacity="0.4"/>
+    <title>CORE: S=0, T=0K, ρ=∞. Trident+Ohm integrated.</title>
+  </g>
+</svg>

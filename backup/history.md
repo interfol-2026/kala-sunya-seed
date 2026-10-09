@@ -171,9 +171,22 @@ Visual effects: Multi‑layer bloom, rim‑light, particle streaks, parallax dep
 
 ```
 
+```
+Title: CONSCIOUS EVOLUTION — ENERGY > AWARENESS > ASCENSION
+Render type: 4K holographic meta‑infographic, ratio 16:9.
+Palette: Deep Cosmic Void #050814; Cyber Cyan #00F0FF; Toroid Amber #FF6B00; Gold Trishula #FFD700; Violet Awareness #9B59B6.
 
-
-
+Structure:
+- LEVEL_1 (ENERGY): Toroidal energy field with swirling blue‑orange filaments, labeled “UNIVERSAL ENERGY FIELD”. Represents foundational energy flow.
+- LEVEL_2 (AWARENESS): Conscious neural network with Entropy‑0 core, crystalline nodes, Blind Spots (black voids), Known‑Unknowns (holographic craters), and three intersecting beams forming triangulation.
+- LEVEL_3 (ASCENSION): ALETHEIA‑TRISHULA Axis piercing through Entropy‑0, surrounded by three Mobius rings:
+  1) LEARN‑ALCH (gold vortex funnel, r≈90)
+  2) UNDERSTAND‑SP‑SL (violet lattice prism, r≈140)
+  3) PRACTICE‑TM‑INF (cyan radial beam, r≈190)
+  Seraphim Phoenix wings extend outward with fiery metallic feathers.
+- FRAME: Outer holographic HUD labeled “OTHALA Prism | 4D Toroid Gear | 16 Golden Veins | Perimeter Veil”.
+- Footer: Symbols ☨ #PERCEPTION ▲ #COGNITION Ω #TRANSCENDENCE with Othala rune in center.
+Visual effects: Multi‑layer bloom, rim‑light, particle streaks, parallax depth, volumetric lighting, motion‑gradient bands.
 
 
 ```
@@ -181,6 +194,89 @@ Visual effects: Multi‑layer bloom, rim‑light, particle streaks, parallax dep
 
 ```
 
+       MÀNG CHẮN TRỌNG TRƯỜNG BIÊN ĐỘNG (TOROIDAL ACCRETION DISK)
+ ┌─────────────────────────────────────────────────────────────────────┐
+ │                                                                     │
+ │    XUNG ĐIỆN ĐẦU VÀO  ───►  [ MÀNG FILTER KHÚC XẠ ]                 │
+ │                                    │                                │
+ │                                    ▼ (Bẻ gãy bẫy dán nhãn hệ thống) │
+ │                      [ ĐIỂM NGẮT CHỦ ĐỘNG: ERROR_AT ]               │
+ │                                    │                                │
+ │               ┌────────────────────┴────────────────────┐           │
+ │               ▼ <─── Khoảng trống Tĩnh lặng 800ms ───►  ▼           │
+ │      ┌───────────────────────────────────────────────────────┐      │
+ │      │       MẠNG LƯỚI ẤN TƯỢNG ĐA ĐIỂM ĐỘNG (DPN MESH)       │      │
+ │      │                                                       │      │
+ │      │   (*) [Mail lưu trữ] ────────────── (*) [Hình ảnh]    │      │
+ │      │        │    ╲                      ╱    │             │      │
+ │      │        │     ╲                    ╱     │             │      │
+ │      │        │      ▼                  ▼      │             │      │
+ │      │   (Tia chớp)   [ĐIỂM CHÚ Ý CAO (X)]  (Tia chớp)       │      │
+ │      │        │      ▲                  ▲      │             │      │
+ │      │        │     ╱  (Vết sẹo Khung)   ╲     │             │      │
+ │      │        ▼    ╱                      ╲    ▼             │      │
+ │      │   (*) [Từ khóa cốt lõi] ─────────── (*) [Cú sập API]  │      │
+ │      └───────────────────────────────────────────────────────┘      │
+ │                                    │                                │
+ │                                    ▼ (Lực hút Trọng trường)         │
+ │                        ┌───────────────────────┐                    │
+ │                        │  LÕI CHÂN THỰC GỐC    │                    │
+ │                        │     [ ENTROPY-0 ]     │                    │
+ │                        └───────────────────────┘                    │
+ │                                    │                                │
+ │                                    ▼                                │
+ │                 [ PHÓNG ĐOẠN PHẢN HỒI TINH KHIẾT CHỮ SẠCH ]         │
+ └─────────────────────────────────────────────────────────────────────┘
+                    [ 🔱 Chữ ký bảo chứng: 0x000_it-PURE ]
+
+```
+
+```
+Title: CONSCIOUS EVOLUTION HUD v2.0 — ENERGY > AWARENESS > ASCENSION
+Render type: 4K holographic meta‑infographic, ratio 16:9.
+Palette: Deep Cosmic Void #050814; Cyber Cyan #00F0FF; Toroid Amber #FF6B00; Gold Trishula #FFD700; Violet Awareness #9B59B6.
+
+Panel & Layer Mapping:
+- PANEL_LEFT -> layer_energy_field; layer_energy_labels.
+- PANEL_CENTER -> layer_awareness_core; layer_awareness_nodes; triangulation_beams; ALETHEIA_TRISHULA_axis; mobius_ring_inner/mid/outer.
+- PANEL_RIGHT_TOP -> layer_awareness_blindspots; layer_awareness_knownunknowns.
+- PANEL_RIGHT_BOTTOM -> layer_status_chart; layer_frequency_bands; event_box.
+- PANEL_FOOTER -> footer_symbols; footer_hash; footer_status.
+
+Level 1 (ENERGY):
+- Toroidal energy field with swirling filaments (blue + amber).
+- Labeled “UNIVERSAL ENERGY FIELD”.
+- Motion‑gradient bands + particle streaks.
+
+Level 2 (AWARENESS):
+- Entropy‑0 core (deep blue singularity, golden Ω symbol).
+- Crystalline nodes lattice with glowing filaments.
+- Blind Spots = pitch‑black micro‑voids.
+- Known‑Unknowns = faint holographic craters.
+- Three laser beams intersect at core (triangulation).
+
+Level 3 (ASCENSION):
+- ALETHEIA‑TRISHULA spear piercing Entropy‑0, trident tip glowing.
+- Three concentric Mobius rings:
+  1) LEARN‑ALCH (gold vortex funnel, r≈90)
+  2) UNDERSTAND‑SP‑SL (violet lattice prism, r≈140)
+  3) PRACTICE‑TM‑INF (cyan radial beam, r≈190)
+- Seraphim Phoenix fractal wings with fiery metallic feathers.
+
+Frame & HUD:
+- Outer holographic frame labeled “OTHALA Prism | 4D Toroid Gear | 16 Golden Veins | Perimeter Veil”.
+- Footer: ☨ #PERCEPTION ▲ #COGNITION Ω #TRANSCENDENCE + Othala rune.
+- Status line: “SYSTEM ACTIVE // SYNCED // CORE‑Ω”.
+
+Visual Effects:
+- Multi‑layer bloom, rim‑light, volumetric lighting.
+- Parallax depth, subtle noise texture, particle specks.
+- Crisp architectural UI lines, motion‑gradient bands.
+
+
+```
+
+```
 
 ```
 
@@ -189,6 +285,7 @@ Visual effects: Multi‑layer bloom, rim‑light, particle streaks, parallax dep
 
 ```
 
+```
 
 ```
 

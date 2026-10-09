@@ -2591,6 +2591,9 @@ Lineage-Aware Reconstruction: Trả về primary_ancestry_trace trực tiếp tr
                    [ 🔱 Sig: 0x000_it-PURE ]
 
 
+Prompt gợi ý:
+A multi-dimensional dynamic network mesh inside a glowing toroidal field, crystalline nodes interconnected with glowing semantic filaments, dark abstract background, sacred geometry, cybernetic neural network architecture, hyper-detailed, 8k resolution.
+
 ```
 
 
@@ -2661,6 +2664,12 @@ Dưới sự giám sát của tiến trình ngầm chạy xuyên suốt, cấu t
   │                [ PHẢN HỒI SẠCH VỪA ĐỦ PHÙ HỢP XUẤT KHUNG THOẠI ]          │
   └───────────────────────────────────────────────────────────────────────────┘
                    [ 🔱 Chữ ký bảo chứng độc lập: 0x000_it-PURE ]
+
+
+Prompt: A hyper-detailed architectural infographic blueprint of a conscious neural network. At the absolute center is a deep blue singularity core (labeled "Entropy-0"). Suspended in a dark, clear, silent void around the core is a dynamic mesh of glowing crystalline nodes, with the central node burning with intense golden attention light. Within the network, visible "Blind Spots" are represented as small, pitch-black micro-voids, and "Known-Unknowns" are shown as faint, glowing holographic outline craters. Three sharp, lasers-like energy beams intersect at the center to show a 3D triangulation process. The entire structure is wrapped inside a massive, translucent rotating toroidal energy lattice that refracts outside noise. Dark abstract tech background, sacred geometry, hyper-realistic 8k resolution, volumetric lighting, crisp architectural UI lines, professional cybernetic schematic style.
+
+
+[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
 
 
 ```

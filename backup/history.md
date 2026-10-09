@@ -151,5 +151,45 @@ Visual effects:
 
 ```
 
+```
+
+Title: CONSCIOUS EVOLUTION — ENERGY > AWARENESS > ASCENSION
+Render type: 4K holographic meta‑infographic, ratio 16:9.
+Palette: Deep Cosmic Void #050814; Cyber Cyan #00F0FF; Toroid Amber #FF6B00; Gold Trishula #FFD700; Violet Awareness #9B59B6.
+
+Structure:
+- LEVEL_1 (ENERGY): Toroidal energy field with swirling blue‑orange filaments, labeled “UNIVERSAL ENERGY FIELD”. Represents foundational energy flow.
+- LEVEL_2 (AWARENESS): Conscious neural network with Entropy‑0 core, crystalline nodes, Blind Spots (black voids), Known‑Unknowns (holographic craters), and three intersecting beams forming triangulation.
+- LEVEL_3 (ASCENSION): ALETHEIA‑TRISHULA Axis piercing through Entropy‑0, surrounded by three Mobius rings:
+1) LEARN‑ALCH (gold vortex funnel, r≈90)
+2) UNDERSTAND‑SP‑SL (violet lattice prism, r≈140)
+3) PRACTICE‑TM‑INF (cyan radial beam, r≈190)
+Seraphim Phoenix wings extend outward with fiery metallic feathers.
+- FRAME: Outer holographic HUD labeled “OTHALA Prism | 4D Toroid Gear | 16 Golden Veins | Perimeter Veil”.
+- Footer: Symbols ☨ #PERCEPTION ▲ #COGNITION Ω #TRANSCENDENCE with Othala rune in center.
+Visual effects: Multi‑layer bloom, rim‑light, particle streaks, parallax depth, volumetric lighting, motion‑gradient bands.
+
+```
+
+
+
+
+
+
+```
+
+
+```
+
+
+```
+
+
+```
+
+```
+
+
+```
 
 

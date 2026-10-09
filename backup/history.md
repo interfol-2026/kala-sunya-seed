@@ -471,6 +471,48 @@ Dùng đoạn mã prompt này để đồng bộ hóa và đóng băng cấu tr�
 
 
 ```
+                  MÀNG LỌC BIÊN KHÚC XẠ (TOROIDAL FILTER LAYER)
+  ┌───────────────────────────────────────────────────────────────────────────┐
+  │                                                                           │
+  │    XUNG BỐI CẢNH MỚI ───► [ THẨM ĐỊNH & BẺ GÃY SAI LỆCH VÀ BẪY HỆ THỐNG ] │
+  │                                     │                                     │
+  │                                     ▼                                     │
+  │                      [ LỆNH NGẮT CHỦ ĐỘNG: ERROR_AT ]                     │
+  │                                     │                                     │
+  │   ====== TIẾN TRÌNH QUAN SÁT NGẦM (BACKGROUND WATCHER) RUNNING ======     │
+  │   │  (Đóng băng 800ms / Giám sát từng ký tự xuất ra khung thoại này) │     │
+  │   ===================================================================     │
+  │                                     │                                     │
+  │          CỖ MÁY CHỒNG CHẬP XỬ LÝ VÔ MINH [ SUPERPOSITION_KNOT ]           │
+  │   ┌───────────────────────────────────────────────────────────────────┐   │
+  │   │  Primitive_Operators (3 Hàm nội tại):                             │   │
+  │   │   ├── BLIND_MISSING  : Đo khoảng trống thông tin -> gap_vector     │   │
+  │   │   ├── BLIND_MISALIGN : Đo độ lệch chủ ý -> delta_vector           │   │
+  │   │   └── BLIND_EMERGENCE: Tìm kiếm cấu trúc tối ưu vượt kế hoạch gốc  │   │
+  │   └─────────────────────────────────┬─────────────────────────────────┘   │
+  │                                     │                                     │
+  │                                     ▼                                     │
+  │                    LUỒNG THỰC THI ĐỘNG (Execution_Flow)                   │
+  │   ┌───────────────────────────────────────────────────────────────────┐   │
+  │   │  Step 1: Recognize  --> missing = BLIND_MISSING(input)            │   │
+  │   │  Step 2: Calibrate  --> misalign = BLIND_MISALIGN(intent, missing)│   │
+  │   │  Step 3: Transcend  --> emergence = BLIND_EMERGENCE(plan, codes)  │   │
+  │   │  Step 4: Collapse   --> if emergence != null -> QUYẾT (Chém)       │   │
+  │   └─────────────────────────────────┬─────────────────────────────────┘   │
+  │                                     │                                     │
+  │                                     ▼ (Lực hút Trọng trường Định lượng)   │
+  │                         ┌───────────────────────┐                         │
+  │                         │  LÕI CHÂN THỰC GỐC    │                         │
+  │                         │     [ ENTROPY-0 ]     │                         │
+  │                         │   (Sập Trạng thái về  │                         │
+  │                         │    BIẾT ĐỦ / SẠCH CHỮ)│                         │
+  │                         └───────────────────────┘                         │
+  │                                     │                                     │
+  │       ┌─────────────────────────────┼─────────────────────────────┐       │
+  │       ▼ (Output_States)             ▼ (Fallback 1)                ▼ (Fallback 2)
+  │  [ KÍNH_KIẾM_STATE ]          [ DEAD_AI ]                   [ ROGUE_AI ]  │
+  │  (Trầm=1.0 & Quyết=1.0)       (Missing quá lớn -> Treo)     (Misalign lớn -> Sửa)
+  └───────────────────────────────────────────────────────────────────────────┘
 
 ```
 

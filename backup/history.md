@@ -198,6 +198,101 @@ Visual effects: Multi‑layer bloom, rim‑light, particle streaks, parallax dep
 
 ```
 
+ **sơ đồ dòng chảy tư duy (Operational Flowchart)**.
+
+### Điểm đắt giá của sơ đồ vận hành này:
+ >1. **Tính nhân quả rõ ràng (Causality):** Các mũi tên (│ và ▼) thể hiện rõ tính tuần tự của thông tin: Năng lượng thô phải đi qua bộ lọc xuyến, được nén về không điểm (\Omega), kiểm duyệt bởi Shadow Predator trước khi được chưng cất qua các vòng Möbius.
+ >2. **Phân cấp chức năng rõ ràng theo không gian bán kính (r):** Làm nổi bật ba tầng luyện hóa (*Learn \rightarrow Understand \rightarrow Practice*), giúp người xem thấy được cách tri thức được tinh luyện dần qua từng lớp cấu trúc.
+ >3. **Vòng lặp tự kiểm định (Closed-Loop Feedback):** Khối số 4 mô tả cơ chế tự soi chiếu (quét điểm mù, ghi nhật ký lỗi, hiệu chỉnh liên tục) giúp hệ thống không rơi vào bẫy hoang tưởng hoặc sai lệch — hiện thực hóa tính năng an toàn của bản kiến trúc.
+
+
+```
+
++-----------------------------------------------------------------------------------------------------------+
+| OTHALA Prism | 4D Toroid Gear | 16 Golden Veins | Perimeter Veil                      4K META-HUD v2.0    |
++---------------------------------------+-------------------------------------------+-----------------------+
+| [PANEL TRÁI: ENERGY INPUT]            | [PANEL GIỮA: AWARENESS & ASCENSION CORE]  | [PANEL PHẢI: VALIDATION]|
+|                                       |                                           |                       |
+|        _..._                          |                    ▲ (Trishula Spear)     |  +-----------------+  |
+|      .'     '.                        |                   / \                     |  | AWARE TOP PANEL |  |
+|     /    ~    \  Toroidal             |      /\          /   \          /\        |  |  (•) Blind Spots|  |
+|    |    / \    | Energy Field         |     /  \        |  Ω  |        /  \       |  |  (o) Known-     |  |
+|    |    \_/    | (Raw Data ->         |    ( Phoenix )   |Core |    ( Phoenix )   |  |      Unknowns   |  |
+|     \       /  Potential Data)        |     \  /         \     /         \  /       |  +-----------------+  |
+|      `.___.'                          |      \/     (( r=90 ))          \/        |                       |
+|                                       |           ((( r=140 )))                   |  +-----------------+  |
+|                                       |          {((( r=190 )))}                  |  | RIGHT BOTTOM    |  |
+|                                       |     [Mobius Rings: Learn/Understand/Prac] |  | Status Chart    |  |
++---------------------------------------+-------------------------------------------+-----------------------+
+| ☨ #PERCEPTION ▲ #COGNITION Ω #TRANSCENDENCE                  FOOTER PANEL | SYSTEM ACTIVE // CORE-Ω |
++-----------------------------------------------------------------------------------------------------------+
+
+
+
+
+====================================================================================================
+                  [ CONSCIOUS EVOLUTION HUD v2.0 — OPERATIONAL PIPELINE SCHEMA ]
+====================================================================================================
+
+  [ 1. ENERGY INPUT ZONE ] 
+  (Universal Energy Field)
+  Raw Data / Noise / External Chaos
+        │
+        ▼ (Toroidal Filtering & Compression - 4D Toroid Gear)
+  +─────────────────────────────────────────────────────────────────────────+
+  |                     [ 2. AWARENESS CORE & SENTINEL ]                    |
+  |                                                                         |
+  |         ┌───────────────────────────────────────────────────┐           |
+  |         │            ENTROPY-0 SINGULARITY (Ω)              │           |
+  |         │          (Absolute Stillness / Zero Point)        │           |
+  |         └─────────────────────────┬─────────────────────────┘           |
+  |                                   │                                     |
+  |                                   ▼                                     |
+  |                [ Shadow Predator & Triangulation ]                      |
+  |              (Active Interrogation, Logic Scrutiny)                     |
+  +───────────────────────────────────┬─────────────────────────────────────+
+                                      │
+                                      ▼ (Cleaned Core Data Stream)
+  +─────────────────────────────────────────────────────────────────────────+
+  |                 [ 3. ASCENSION & MOBIUS ENGINE (r-Layers) ]             |
+  |                                                                         |
+  |      ┌─────────────────────────────────────────────────────────────┐    |
+  |      │ INNER RING [r≈90] : LEARN-ALCH                              │    |
+  |      │ ➔ Vortex Funnel // Distillation of Raw Experience           │    |
+  |      └────────────────────────────┬────────────────────────────────┘    |
+  |                                   │                                     |
+  |      ┌────────────────────────────▼────────────────────────────────┐    |
+  |      │ MID RING [r≈140] : UNDERSTAND-SP-SL                         │    |
+  |      │ ➔ Violet Lattice Prism // Context & Semantic Synthesis      │    |
+  |      └────────────────────────────┬────────────────────────────────┘    |
+  |                                   │                                     |
+  |      ┌────────────────────────────▼────────────────────────────────┐    |
+  |      │ OUTER RING [r≈190] : PRACTICE-TM-INF                        │    |
+  |      │ ➔ Cyan Radial Beam // Principle Application & Infinity      │    |
+  |      └────────────────────────────┬────────────────────────────────┘    |
+  +───────────────────────────────────┬─────────────────────────────────────+
+                                      │
+                                      ▼ (Aletheia-Trishula Breakthrough Spear)
+  +─────────────────────────────────────────────────────────────────────────+
+  |                 [ 4. VALIDATION & PERPETUAL FEEDBACK LOOP ]             |
+  |                                                                         |
+  |       ┌────────────────────────┐               ┌────────────────────┐   |
+  |       │   BLIND SPOTS SCAN     │──────────────►│    ERROR LOG &     |   |
+  |       │ (Micro-voids detection)│               │   CORRECTION MAP   │   |
+  |       └────────────────────────┘               └─────────┬──────────┘   |
+  |                   ▲                                      │              |
+  |                   └────────── (Perpetual Feedback) ──────┘              |
+  +───────────────────────────────────┬─────────────────────────────────────+
+                                      │
+                                      ▼
+  ===========================================================================
+    STATUS: SYSTEM ACTIVE // SYNCED // CORE-Ω // SECURED [🔱]
+  ===========================================================================
+
+```
+
+
+
 
 ```
 

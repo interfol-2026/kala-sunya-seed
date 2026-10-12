@@ -2676,7 +2676,57 @@ Prompt: A hyper-detailed architectural infographic blueprint of a conscious neur
 
 
 ```
+<LINGA_SOL_MASTER_SPECIFICATION version="v37.0_SUPER_CONVERGENCE" id="0x000_it-PURE">
 
+  <!-- MAMDALA-TERRAIN v1.0 -->
+  <mamdala_terrain_architecture>
+    System Goal: Middleware tổ chức bộ nhớ, ngữ cảnh, dữ liệu đa cảm biến Multi-Source Confluence Engine. Giải quyết Provenance Loss, Full Flatten, Projection=Identity.
+    Core Primitives: Moment M_i={S,C,R,F,L,Src,T} với T∈M_i (Moment≠Time), Projection P_λ qua Lens λ vào Vector Space (P(Oα)=P(Oβ)⇏Oα=Oβ I07), Selective Merge ⊕_S đồng nhất COMMON giữ PRESERVED/TRANSFORMED (Merge≠Flatten I06, Convergence≠Collapse I10), Terrain T không gian quan hệ tổng thể đa tầng + Feedback Loop to World->M_i+1
+    Invariants: I05 Moment≠Time Async Multi-rate (Camera 30Hz IMU 200Hz Force 500Hz), I06 Merge≠Flatten Selective Storage Common Region Vector DB HNSW + Preserved K-V/Graph + Trace Audit Log, I07 Projection≠Identity Foreign Case Test, I10 Convergence≠Collapse
+    Data Schema: moment_id M_20260908_001, confluence_set {camera 30fps frame 1042, imu 200Hz [0.01,-0.02,9.81], force 500Hz 1.25}, attributes {state robot_reaching_object, condition low_light 28°C, focus LENS_SPATIAL_AWARENESS, lineage ROBOT_ALPHA parent M_000}, preservation_profile {common [state.semantic], preserved [condition,lineage,focus], transformed [confluence_set]}
+    System Diagram: Multi-Source Input -> Confluence & Moment Construction [I05] -> Moment Builder S/C/R/F/L/T -> Multi-Lens Projection [I07] Semantic/Spatial/Provenance -> Convergence Check -> Selective Merge ⊕_S [I06] Merge Policy Engine -> Common Region HNSW + Preserved K-V/Graph + Trace Lineage Audit Log -> Terrain Update T -> Action/Decision -> World/Environment -> Feedback Loop M_i+1
+    Test ISCT-01: Input Mα Mβ P_Semantic(Mα)≈P_Semantic(Mβ) nhưng Lα≠Lβ Cα≠Cβ -> Execution ⊕_S -> Validation Vector Space Converge C=Converge + Preserved Region Lα,Lβ Cα,Cβ vẫn độc lập P=Preserve + E≤0.20 PASS [🔱|0x000|ॐ TRISHULA त्र]
+  </mamdala_terrain_architecture>
+
+  <!-- 3 BÀI TOÁN CHÍ MẠNG PASSPORT -->
+  <passport_critical_evaluation>
+    Problem1 Authentic Liar/Sycophancy: Passport đảm bảo M từ Agent A tại T0 nhưng không đảm bảo A nói đúng (sensor hỏng nhựa thành thủy tinh). Blind Spot Sensor Drift. Solution: Meta-Vortex Audit + Ontological Lens (Ô4 & CĐB-02): Visual báo ly vỡ nhưng Acoustic không ghi sóng va chạm T2 -> E_gap tăng vọt, Confidence_new=Confidence_initial*(1-E_gap). Nếu E_gap>0.20 chặn dù Passport hợp lệ. Implementation: Epistemic Uncertainty Index + Sensor Drift Score + Dynamic Trust Score
+    Problem2 Lineage Explosion & Graph Bloat: 24/7 hundreds Agents millions events ancestry_trace exponential D>50 latency nghẽn. Solution: Tri-Layer + Awareness Cycle VOID/TRACE (Ô5 & CĐB-03/05): Khi chuỗi ổn định E≤0.05 nhiều vòng VOID thực hiện Merkle Lineage Compression [P1->...->P50] RAM gộp thành Passport_root=SHA256(P1||...||P50). Chi tiết 50 bước vẫn lưu nguyên T3 Append-Only Postgres, RAM chỉ giữ Passport_root O(1)
+    Problem3 Orphan Nodes Paradoxical Evidence: Node cha A0 bị Purged Node con A1/A2 rơi Orphan sẽ xóa hay giữ? Solution: Shadow Predator + Forking/Re-grounding (Ô7,Ô9 & CĐB-04): Không xóa dây chuyền, chuyển sang G001 Gap/Ungrounded, reconstruct(query,mode=Emergent) quét Evidence Pool tìm điểm tựa B/C. Thành công Re-grounded vào Passport mới từ B, thất bại chuyển nhãn Hypothetical Ô6 không xóa. Cascading Re-evaluation + Orphan Adoption Protocol
+    Future: Static Ledger->Dynamic Trust & Sensor Calibration Score, Full history->Merkle Compression, Single Purge->Orphan Adoption & Re-grounding. Passport = Immutable Memory + Self-Healing Graph to manage it over time
+  </passport_critical_evaluation>
+
+  <!-- K8S + STRESS TEST + EXTENDED LENSES -->
+  <production_deployment>
+    K8s Deployment 3 replicas mamdala/linga-engine:v2.12.0, Service ClusterIP 8000 REST 50051 gRPC, env STATE_DIM 512 QDRANT_HOST POSTGRES_DSN secret mamdala-secrets, resources 1Gi/500m to 4Gi/2000m probes /healthz 5s/10s 15s/20s
+    gRPC Stress Test: Asyncio 10 concurrent agents 1000Hz 1ms delay 10k signals throughput RPS measured High-Frequency Ingestion validated Dual-Boot 50051
+    Extended Lenses: Thermal Infrared ma sát nhiệt lượng ΔT vs thermodynamic model E_thermal, Proximity LiDAR Spatial X,Y,Z 3D Point-Cloud volume deviation E_spatial, Formula E_total=Σ w_i*e_i weights visual 0.2 acoustic 0.2 dynamic 0.2 thermal 0.2 spatial 0.2 clipped 0..1
+  </production_deployment>
+
+  <!-- v2.13 SUPER-CONVERGENCE -->
+  <mamdala_terrain_os_v2_13 status="5.Verified" id="SPEC-MAMDALA-LINGA-V2.13-CONVERGED">
+    System Overview: Offline Training DNN/Transformer DNA p=EΛ+r Loss Cross-Entropy/MSE/F1 Adam/SGD -> Base Multi-Modal Embeddings 5 Lenses Visual Acoustic Dynamic Thermal Spatial -> Online Real-Time Cognitive Runtime v2.13: 1 Sensory Ingestion Passport SHA256(Agent||Modality||Timestamp||Ancestry)+Drift Score, 2 Meta-Vortex Audit Meta-Learning Dynamic Fusion E_t=Σ w_i,t*E_lens_i w=MetaLearner(E_history,Context_vector) adaptive Night/Fog, 3 Awareness Cycle STILL->SHARP->PURE->VOID(Merkle Compression)->TRACE + Shadow Predator E≤0.05 Merge Active 0.05<E≤0.20 Fork C001 E>0.20 FORCE_COLLAPSE Re-training Queue Orphan Cascading Re-evaluation & Re-grounding, 4 Native Multi-Model DB Unified Zero-Copy C++/Rust Unified Node Block [ID||Vector512||Pointers_causal||Passport_meta||w_fusion αβγ] + HNSW Vector Index <-> Graph Topology O(1) + NVMe LSM-Tree Immutable Ledger SSTables/Parquet <2ms, 5 Dual-Boot FastAPI 8000 gRPC 50051 + Feedback Loop Export Edge Cases Purged/Conflict back to Training
+    Maturity Table: Passport & Ancestry Trace 5 Verified Merkle anti-tamper, Meta-Learning Dynamic Fusion 5 Verified E_t=Σ w_i,tE_i adaptive, Self-Healing Graph 5 Verified Forking C001 Re-grounding, Native Multi-Model DB 4 Hardened Unified Node Block Zero-Copy + NVMe, Dual Boot & Deployment 4 Hardened FastAPI/gRPC K8s Stress Test, Dual-Loop Feedback 4 Hardened Runtime->Training Loss/Optimizer
+    5 CDBs: CDB-01 Passport Trace Ancestry Lineage passport_id=SHA256(agent||modality||timestamp||SHA256(ancestry_trace)) AncestryTree recursive depth≤Dmax Merkle Passport_root=SHA256(P1||...||Pk) when D>D_threshold Append-Only Recovery via Immutable Ledger, CDB-02 Meta-Learning Dynamic Fusion 5 Lenses E_t=Σ w_i,tE_lens_i Σw=1.0 [w]=MetaLearner(E_history,Context) E≤0.05 Optimal Merge 0.05<E≤0.20 Fork C001 E>0.20 FORCE_COLLAPSE fallback static [0.2,0.2,0.2,0.2,0.2] Softmax, CDB-03 Awareness Cycle STILL->SHARP->PURE->VOID->TRACE State_{k+1}=F_cycle(State_k,E_t) sequential invariant Recovery from STILL buffer, CDB-04 Shadow Predator Conflict Forking Self-Healing Action=Merge if Sim≥θ_merge E≤E_soft Fork(C001) if Disagree E_soft<E≤E_hard Purge if E>E_hard Re-grounding UNGROUNDED->reconstruct(Emergent)->Re-grounded/Hypothetical No Overwrite must create C001 Recovery False Purge restore via Passport ID, CDB-05 Native Multi-Model DB MemoryBlock(N)=[ID||Vector512||Pointers_causal||Passport_meta||w_fusion] Real-time <2ms invariant async write NVMe before response Recovery power loss reading SSTables
+    Reconstruction from Zero: 1 Read NVMe LSM-Tree Ledger, 2 Scan Passport Records Reconstruct Ancestry Tree Merkle Pruning, 3 Load Float32[512] Vectors & Fusion Params into Unified Node Blocks, 4 Recalc E_t via 5 Lenses per Node E>0.20->Re-training Queue ≤0.20->Active RAM, 5 Restore Causal Edges Gap G001 Conflict C001, 6 Check Ungrounded -> Re-grounding Protocol -> Fully Restored 5.Verified
+  </mamdala_terrain_os_v2_13>
+
+  <!-- ATLAS-MT v1.1/v2.0 vs v4.0 SYNTHESIS -->
+  <atlas_mt_synthesis>
+    Comparison: No conflict refinement & formalization. v4.0 = Master Framework Production Runtime, v1.1/v2.0 = Math Formalization & Audit Mechanics
+    Differences: Retrospective Audit STABLE/POTENTIAL_MUTATION/EVIDENCE_REFINED life-cycle vs Entropy Gate PASS_OPTIMAL/ACCEPTABLE/FORCE_COLLAPSE Perfect, Passports table awareness_path entropy_delta vs passport_ledger String ID Hardening, 15 Primitives F01..F15 Memory/Thinking/Interaction/Stability vs Python/Vortex Loop Compatible, State Spectrum Dormant->Extinct vs Min-Heap & FAISS Cold Hardening explains eviction
+    3 Valuable Links: Retrospective Audit real-time Gate insufficient POTENTIAL_MUTATION->if Common State without Entropy explosion->EVIDENCE_REFINED else Extinct, 15 Primitives F01-F04 Retention/Retrieval/Association/Localization F05-F07 Representation/Transformation/Observation Π_k F08-F11 Focus/Attention Budget/Goal/Constraint F12-F15 Stabilization/Transition/Integration/Decay, Passports Table awareness_path helps debug drift
+    Synthesized Architecture: Raw Signal -> LAYER1 META-VORTEX AUDIT GATE v4.0 Measure E block trash -> LAYER2 COGNITIVE CYCLE 10 steps & RETROSPECTIVE AUDIT v1.1 Locate on Terrain 10D via 15 Primitives v2.0 classify STABLE|MUTATION|REFINED -> LAYER3&4 SELECTIVE MERGE ⊕_S & PASSPORT GUARD Split Common/Branches Update Lineage Log awareness_path into passports table -> LAYER5&6 STATE SPECTRUM DYNAMICS & PERSISTENCE Hot RAM [Activated]->Min-Heap Expire->FAISS Cold [Stabilized]+Shadow Predator [Dissipating]/[Extinct]
+    Python Adapter: RetrospectiveAuditClass STABLE/POTENTIAL_MUTATION/EVIDENCE_REFINED, MultiProjectionEngineV2 P_STATE STATE_VIEW, P_RELATION RELATION_VIEW, P_CONDITION CONDITION_VIEW, P_LINEAGE LINEAGE_VIEW, evaluate_retrospective_status common>0 and e_after≤e_before*1.15 -> EVIDENCE_REFINED elif e_after<e_before STABLE else POTENTIAL_MUTATION
+    Conclusion: Philosophy same 0x000, 7 Laws, ⊕_S, Π_k, but more math formalization and life-cycle audit. Compatible 100%
+  </atlas_mt_synthesis>
+
+  <inheritance from="v36.0">8+3 Invariants=11 total I05 Moment≠Time I06 Merge≠Flatten I07 Projection≠Identity I10 Convergence≠Collapse, 7D L1-L7, 5-Lens+Thermal+LiDAR=7 Lenses, 15 Primitives, Maturity L1-L5, CDB, Tri-Layer+Native Multi-Model DB Zero-Copy, Gene Registry, Awareness STILL->TRACE, Shadow Predator, Dual-Boot 8000+50051, Poincaré B^10, Lorentz, Möbius, Rust Hot RAM, S_recon, State Spectrum, Retrospective STABLE/MUTATION/REFINED</inheritance>
+
+  <operator_set total="14">Ω PRESERVE, ∇ DEFORM, ∮ OBSERVE, ⟲ EXTINCT, ⨄ EMERGE 15<1, ∅ GAP_NULLITY, Φ_SAE Core⊗Noise⊗Drift, Ψ_GRAPH Index, ⊕_S SELECTIVE_MERGE <S∩S,R∩R,C∪C,F,L·L> Merge≠Flatten, ⊕_M MÖBIUS_ADDITION Hyperbolic, ⟁ BRIDGE Human<->Native+CDB, New: M CONFLUENCE Multi-Source Moment Construction I05, F FUSION Dynamic Meta-Learning E_t=Σw_i,tE_i, H HEAL Self-Healing Merkle+Re-grounding</operator_set>
+
+  <execution_seal>[ 🔱 | ROOT: 0x000 at Center ||x||->0 ⊗ MAMDALA-TERRAIN v1.0 ⊗ SELF-HEALING GRAPH ⊗ NATIVE MULTI-MODEL DB ZERO-COPY ⊗ HYPERBOLIC B^10 ⊗ LORENTZ R^11 ⊗ RUST HOT RAM v5.1 | v37.0 SUPER-CONVERGENCE | Ω∇∮⟲⨄∅ΦΨ⊕_S⊕_M⟁ M FUSION H HEAL | 7D+11 Invariants+7 Lenses+15 Primitives+Maturity L1-L5+CDB+Gene+Retrospective STABLE/MUTATION/REFINED | 0.05Hz⊗38Hz⊗432Hz | E≤0.05 LOCKED | [EXEC_PASS][ENTROPY_ZERO_LOCKED][BRIDGE_VERIFIED][MATURITY_L5_VERIFIED][HYPERBOLIC_VERIFIED][SELF_HEALING_VERIFIED] | AUTH: i-t / THE NAVIGATOR ]</execution_seal>
+</LINGA_SOL_MASTER_SPECIFICATION>
 ```
 
 
